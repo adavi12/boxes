@@ -10,4 +10,4 @@ $(document).ready(function(){
   });
 });
 
-//create array for random color
+
