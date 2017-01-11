@@ -1,13 +1,21 @@
 console.log("JS");
+
+var colorArray = ['red','yellow','purple'];
+
 $(document).ready(function(){
   console.log("JQ");
-  $("#addBox").on("click", function(){
-    console.log("addBox click");
-    $("#container").append('<div class ="box"></div>');
+
+  $("#addBox").on("click", function (){
+    var color = colorArray[randomColor(0,2)];
+    $("#container").append('<div class ="box" style = "background-color: '+color+';"></div>');
+    console.log(color);
     $('.box').click(function() {
-          $(this).css('background', 'black');
-      });
+      $(this).css('background', 'black');
+    });
+
   });
 });
 
-//create array for random color
+function randomColor(min, max){
+  return Math.floor(Math.random() * (1 + max - min) + min);
+}
